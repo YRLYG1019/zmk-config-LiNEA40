@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,
+            //スクロール方向を逆転,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -66,39 +66,59 @@
     combos {
         compatible = "zmk,combos";
 
-        ZenkakuHankaku {
-            bindings = <&kp GRAVE>;
+        spc {
+            bindings = <&kp SPACE>;
             key-positions = <11 12>;
         };
 
-        DeleteKey {
-            bindings = <&kp DEL>;
-            key-positions = <7 8>;
+        sspc {
+            bindings = <&kp LS(SPACE)>;
+            key-positions = <1 2>;
         };
 
-        InsertKey {
-            bindings = <&kp INS>;
-            key-positions = <6 7>;
+        cap {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <0 1>;
         };
 
-        CenterClick {
-            bindings = <&mkp MB3>;
-            key-positions = <17 16>;
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <12 13>;
         };
 
-        RightClick {
-            bindings = <&mkp MB2>;
-            key-positions = <18 17>;
+        home {
+            bindings = <&kp HOME>;
+            key-positions = <15 16>;
         };
 
-        PrevClick {
-            bindings = <&mkp MB4>;
-            key-positions = <27 28>;
+        end {
+            bindings = <&kp END>;
+            key-positions = <25 26>;
         };
 
-        ClickNext {
-            bindings = <&mkp MB5>;
+        bs {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <16 17>;
+        };
+
+        ent {
+            bindings = <&kp ENTER>;
+            key-positions = <17 18>;
+        };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <8 9>;
+        };
+
+        pgup {
+            bindings = <&kp PAGE_UP>;
             key-positions = <26 27>;
+        };
+
+        pgdn {
+            bindings = <&kp PAGE_DOWN>;
+            key-positions = <27 28>;
         };
     };
 
@@ -149,10 +169,10 @@
 
         MARK {
             bindings = <
-&kp NUMBER_1      &kp NUMBER_2     &kp NUMBER_3          &kp NUMBER_4  &kp NUMBER_5                    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8           &kp NUMBER_9       &kp N0
-&kp LEFT_CONTROL  &kp SLASH        &kp ASTERISK          &kp PERIOD    &kp EQUAL                       &kp C_MUTE    &kp LS(LBKT)  &kp RIGHT_BRACKET      &kp BACKSLASH      &kp RIGHT_CONTROL
-&kp LEFT_SHIFT    &kp KP_NUMBER_1  &kp NON_US_BACKSLASH  &kp APOS      &kp GRAVE                       &kp KP_EQUAL  &kp INT3      &kp LS(RIGHT_BRACKET)  &kp LS(BACKSLASH)  &kp LS(RIGHT_SHIFT)
-&trans            &trans           &trans                &trans        &kp LEFT_ALT  &trans    &trans  &trans                      &trans                 &trans             &trans
+&kp NUMBER_1      &kp NUMBER_2     &kp NUMBER_3          &kp NUMBER_4  &kp NUMBER_5                    &kp NUMBER_6  &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9     &kp N0
+&kp LEFT_CONTROL  &kp SLASH        &kp ASTERISK          &kp PERIOD    &kp EQUAL                       &kp LEFT      &kp DOWN_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp RIGHT_CONTROL
+&kp LEFT_SHIFT    &kp KP_NUMBER_1  &kp NON_US_BACKSLASH  &kp APOS      &kp GRAVE                       &kp DELETE    &kp BACKSPACE   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LS(RIGHT_SHIFT)
+&trans            &trans           &trans                &trans        &kp LEFT_ALT  &trans    &trans  &trans                        &trans          &trans           &trans
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_LEFT SCRL_RIGHT>;
